@@ -4,52 +4,51 @@ import { Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'my-tutorial',
-    template: `<h2>This TEDU Angular2 Tutorial component</h2>
-              <h4>Sub Component</h4>
-        <h3 [class.redColor]="applyClass">Apply class</h3>
-    <h4 [style.color]="blueColor?'blue':'orange'">Apply style</h4>
+    template: 
+`
+<h2>This TEDU Angular2 Tutorial component</h2>
+<h3 [class.redColor]="applyClass">Apply class</h3>
+<h4 [style.color]="blueColor?'blue':'orange'">Apply style</h4>
 <button (click)="OnClick(name.value)">Click me</button>
-          <button (click)="OnClick(name)">Click me</button>
-     <button (click)="OnClick($event)">Click me</button>
+<button (click)="OnClick(name)">Click me</button>
+<button (click)="OnClick($event)">Click me</button>
 
-    <input type="text" #name/> 
-   <br>
+<input type="text" #name/>
+<br>
 
-  <input type="text" [(ngModel)] = "fname" />
-   <input type="text" [(ngModel)] = "lname" />
-   <br>
-   Full name: {{fname}} {{lname}}
+<input type="text" [(ngModel)]="fname" />
+<input type="text" [(ngModel)]="lname" />
+<br> Full name: {{fname}} {{lname}}
 
-   <br/>
-   <h3 *ngIf="showLineIf">This ngIf directive line.</h3>
-    <div [ngSwitch]="color">
-        <p *ngSwitchCase="'red'">This line color is red</p>
-        <p *ngSwitchCase="'blue'">This line color is blue</p>
-        <p *ngSwitchCase="'green'">This line color is green</p>
-        <p *ngSwitchDefault>Invalid color</p>
-    </div>
+<br/>
+<h3 *ngIf="showLineIf">This ngIf directive line.</h3>
+<div [ngSwitch]="color">
+  <p *ngSwitchCase="'red'">This line color is red</p>
+  <p *ngSwitchCase="'blue'">This line color is blue</p>
+  <p *ngSwitchCase="'green'">This line color is green</p>
+  <p *ngSwitchDefault>Invalid color</p>
+</div>
 
-    <ul>
-        <li *ngFor="let color of colors">{{color}}</li>
-    </ul>
+<ul>
+  <li *ngFor="let color of colors">{{color}}</li>
+</ul>
 
-     <!-- this is the new syntax for ng-repeat -->
-  <ul>
-    <li *ngFor="let person of people">
-        {{person.name}}
-    </li>
-  </ul>
+<!-- this is the new syntax for ng-repeat -->
+<ul>
+  <li *ngFor="let person of people">
+    {{person.name}}
+  </li>
+</ul>
 
-    <p [ngClass]="{classOne:cone,classTwo:ctwo}">This ngClass apply style</p>
-    <button (click)="toggle()">Toggle</button>
-    <p [ngStyle]="{'font-style':style,'font-size':size}">This paragaph will be apply to ngStyle</p>
-   
-      <p>Child component: {{tuongtacname}}</p>
-            <p>Child component2: {{tuongtacname2}}</p>
+<p [ngClass]="{classOne:cone,classTwo:ctwo}">This ngClass apply style</p>
+<button (click)="toggle()">Toggle</button>
+<p [ngStyle]="{'font-style':style,'font-size':size}">This paragaph will be apply to ngStyle</p>
 
-    <button [disabled]="voted" (click)="vote(true)">Agree</button>
-    <button [disabled]="voted" (click)="vote(false)">Disgree</button>
-    Result: {{voted}}
+<p>Child component: {{tuongtacname}}</p>
+<p>Child component2: {{tuongtacname2}}</p>
+
+<button [disabled]="voted" (click)="vote(true)">Agree</button>
+<button [disabled]="voted" (click)="vote(false)">Disgree</button> Result: {{voted}}
 `,
     styles: [`.redColor{
         color:red;

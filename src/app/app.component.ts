@@ -32,9 +32,9 @@ import { PersonComponent } from './person.component';
 <my-tutorial [tuongtacname]="textname.value"></my-tutorial>
 <my-tutorial *ngFor="let persons of names" [tuongtacname2]="persons" (onVote)="parentVote($event)"></my-tutorial>
 `
-  , styles: ['h4 {color:blue;}']
-  // templateUrl: './app.component.html',
-  // styleUrls: ['./app.component.css']
+  , styles: ['h4 {color:blue;}'],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
@@ -66,4 +66,9 @@ export class AppComponent {
   object: Object = { foo: 'bar', baz: 'qux', nested: { xyz: 3, numbers: [1, 2, 3, 4, 5] } };
   collection: string[] = ['a', 'b', 'c', 'd'];
 
+  resultName : String = "";
+  onSubmit(value: any) {
+    console.log(value);
+    this.resultName = value;
+  }
 }
