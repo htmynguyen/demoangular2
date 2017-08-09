@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import {HelloComponent} from './hello.component';
+import {PersonComponent} from './person.component';
 import {FormsModule} from '@angular/forms';
+import { AlertModule } from 'ngx-bootstrap';
+
+import {ExponentialStrengthPipe} from './exponential-strength.pipe';
+
 @NgModule({
   declarations: [
-    AppComponent, HelloComponent
+    AppComponent, PersonComponent,ExponentialStrengthPipe
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
